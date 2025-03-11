@@ -20,15 +20,6 @@ public class UserController {
 	public UserController(UserService userService) {
 		this.userService = userService;
 	}
-	@GetMapping(value = "/")
-	public String printWelcome(ModelMap model) {
-		List<String> messages = new ArrayList<>();
-		messages.add("Hello! (Привет!)");
-		messages.add("I'm Spring MVC application");
-		messages.add("5.2.0 version by sep'19 ");
-		model.addAttribute("messages", messages);
-		return "index";
-	}
 
 	@GetMapping("/users")
 	public String listUsers(Model model) {
